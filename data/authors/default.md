@@ -9,4 +9,4 @@ linkedin: https://www.linkedin.com/in/michael-shi-33304020b/
 github: https://github.com/mfshi03
 ---
 
-Hello! My name is Michael Shi and I am an undergraduate student at Virginia Tech. I am passionate about learning and have broad interests in software development, machine learning, mathematics, and psychology.
+Hello! My name is Michael Shi and I am an undergraduate computer science student at Virginia Tech. I am passionate about learning and have broad interests in software development, machine learning, mathematics, business and psychology.
