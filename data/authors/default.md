@@ -10,3 +10,5 @@ github: https://github.com/mfshi03
 ---
 
 Hello! My name is Michael Shi and I am an undergraduate computer science student at Virginia Tech. I am passionate about learning and have broad interests in software development, machine learning, mathematics, business and psychology.
+
+In my free time, I like to hoop, code, watch documentaries, listen to podcasts, and go on random rabbit holes on the internet.
