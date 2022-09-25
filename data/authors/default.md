@@ -1,6 +1,6 @@
 ---
 name: Michael Shi
-avatar: /static/images/avatar.png
+avatar: /static/images/profile.png
 occupation: Undergraduate Student
 company: Virginia Tech
 email: mfshi03@gmail.com
