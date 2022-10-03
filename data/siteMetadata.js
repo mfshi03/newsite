@@ -5,7 +5,7 @@ const siteMetadata = {
   description: 'A blog created with Next.js and Tailwind.css',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://newsite-eight.vercel.app/',
+  siteUrl: 'https://mfshi03.github.io/',
   siteRepo: 'https://github.com/mfshi03/newsite',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/godgate.png',
