@@ -1,1 +1,1 @@
-New site because apparently using html is dumb and you should use a template
+New site because I wanted a better blog template
