@@ -24,3 +24,13 @@ But besides all this, the images that Midjourney creates are absolutely stunning
 ![Sorrow and War](/static/images/sorrow.png)
 
 ![Insidious bloom](/static/images/insflower.png)
+
+
+### Autoencoder
+
+![Autoencoder]({{ '/static/images/autoencoder.png' | relative_url }})
+{: style="width: 100%;" class="center"}
+*Fig. 2. Overview of Temporal Ensembling. The per-sample EMA label prediction is the learning target. (Image source: [Laine & Aila (2017)](https://arxiv.org/abs/1610.02242))*
+{:.image-caption}
+
+Π-model requests the network to run two passes per sample, doubling the computation cost. To reduce the cost, **Temporal Ensembling** ([Laine & Aila 2017](https://arxiv.org/abs/1610.02242)) maintains an exponential moving average (EMA) of the model prediction in time per training sample $$\tilde{\mathbf{z}}_i$$ as the learning target, which is only evaluated and updated once per epoch. Because the ensemble output $$\tilde{\mathbf{z}}_i$$ is initialized to $$\mathbf{0}$$, it is normalized by $$(1-\alpha^t)$$ to correct this startup bias. Adam optimizer has such [bias correction](https://stats.stackexchange.com/questions/232741/why-is-it-important-to-include-a-bias-correction-term-for-the-adam-optimizer-for) terms for the same reason.
