@@ -26,7 +26,13 @@ But besides all this, the images that Midjourney creates are absolutely stunning
 ![Insidious bloom](/static/images/insflower.png)
 
 
-### Autoencoder
+### How it works?
+
+What are diffusion models?
+	Diffusion models are a form of generative models.  In the special case of generative models, we have two neural networks called the discriminator and generator networks. The generator network essentially learns to generates new data samples from the input data and the discriminator network learns to classify generated vs input data. Over iterations, the generator network is able learns how to generate more similar data to the input.
+
+
+In stable diffusion, autoencoders are used to derive latent variables from the images. This autoencoder architecture is uniquely suited for this task because of it's ability to minimize the loss of information from the input data. 
 
 <figure>
         <img src="/static/images/autoencoder.png"/>
