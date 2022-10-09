@@ -29,7 +29,7 @@ But besides all this, the images that Midjourney creates are absolutely stunning
 ### Autoencoder
 ![Amazon Rainforest](/static/images/autoencoder.png)
 <style>
-figcaption{
+figcaption \{
     text-align: center;
     width: 85%;
     margin: 10px auto 35px;
