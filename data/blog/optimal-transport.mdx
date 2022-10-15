@@ -1,0 +1,49 @@
+---
+title: Optimal Transport and Perfect Matching
+date: '2022-10-15'
+tags: ['Math', 'Machine Learning']
+draft: false
+summary: 'A summary of some research notes'
+authors: ['default']
+---
+
+Why is this important?
+	The main reason I decided to look into matching algorithms is because of their value in finding the minimal cost in machine learning. This is extremely important because we can use these algorithm to compare distributions of data by posing it as a matching problem. In machine learning, this might be useful for calculating how well a model performs by comparing the Wasserstein distances between the performance on sample distribution and the full distribution.
+
+What is a perfect matching:
+	A perfect matching is a graph where every vertex is matched to another vertex such that all vertices are covered with a single edge
+    ![graph](/static/images/Pasted image 20220925195323.png)
+
+    
+
+How can we find perfect matchings?
+
+Push-Relabel Algorithm:
+
+[Source Video](https://www.youtube.com/watch?v=Wq2tkITYYHE)
+Timestamp: 33:47
+
+We have dual weights for each vertex to maintain some invariants. 
+
+We have this function 
+
+$$C^P_{vw} = C_{vw} - p(v) - p(w)$$
+where
+- $C^P$ is the reduced cost
+- $p(x)$ is the dual weight for vertex x
+- $u$ and $v$ are edges 
+
+Invariants:
+1. all reduced costs $\geq$  0
+2. Every $e \in M$ is tight $(C_{vp}, C^P_{e} = 0)$
+
+Theorem:
+If graph M is perfect and the invariants hold, the M is minimal cost 
+
+With this theorem we get the following linear program:
+
+$\sum_{e \in C \cap M}C_e = \sum_{e \in C \cap M}C^P_e + \sum_{v \in C}p(v)$ 
+
+$\sum_{e \in C - M}C_e = \sum_{e \in C - M}C^P_e + \sum_{v \in C}p(v)$ 
+
+We can now iteratively solve for the minimal cost with a slack variable $\epsilon$
