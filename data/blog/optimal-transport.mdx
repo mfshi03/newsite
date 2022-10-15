@@ -7,16 +7,20 @@ summary: 'A summary of some research notes'
 authors: ['default']
 ---
 
-Why is this important?
-	The main reason I decided to look into matching algorithms is because of their value in finding the minimal cost in machine learning. This is extremely important because we can use these algorithm to compare distributions of data by posing it as a matching problem. In machine learning, this might be useful for calculating how well a model performs by comparing the Wasserstein distances between the performance on sample distribution and the full distribution.
+### Why is this important?
 
-What is a perfect matching:
-	A perfect matching is a graph where every vertex is matched to another vertex such that all vertices are covered with a single edge
-    ![graph](/static/images/Pasted image 20220925195323.png)
+The main reason I decided to look into matching algorithms is because of their value in finding the minimal cost in machine learning. 
+This is extremely important because we can use these algorithm to compare distributions of data by posing it as a matching problem. 
+In machine learning, this might be useful for calculating how well a model performs by comparing the Wasserstein distances between the performance on sample distribution and the full distribution.
+
+### What is a perfect matching:
+
+A perfect matching is a graph where every vertex is matched to another vertex such that all vertices are covered with a single edge
+![graph](/static/images/graph.png)
 
     
 
-How can we find perfect matchings?
+### How can we find perfect matchings?
 
 Push-Relabel Algorithm:
 
