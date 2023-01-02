@@ -51,7 +51,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
         <ul>
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((frontMatter) => {
-            const { slug, date, title, summary, tags } = frontMatter
+            const { slug, date, title, summary, images, tags } = frontMatter
             return (
               <li key={slug} className="py-4">
                 <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
@@ -62,8 +62,8 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                     </dd>
                     <NextImage
                       className="centered"
-                      alt={'Spider'}
-                      src={'/static/images/spider3.jpg/'}
+                      alt={'Header'}
+                      src={images != null ? images[0] : '/static/images/transparent.png'}
                       width={100}
                       height={100}
                     />
