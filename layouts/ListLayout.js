@@ -61,6 +61,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                       <time dateTime={date}>{formatDate(date)}</time>
                     </dd>
                     <NextImage
+                      className="centered"
                       alt={'Spider'}
                       src={'/static/images/spider3.jpg/'}
                       width={100}
