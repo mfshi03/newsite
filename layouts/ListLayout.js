@@ -2,6 +2,7 @@ import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { useState } from 'react'
+import NextImage from 'next/image'
 import Pagination from '@/components/Pagination'
 import formatDate from '@/lib/utils/formatDate'
 
@@ -59,6 +60,12 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                     <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                       <time dateTime={date}>{formatDate(date)}</time>
                     </dd>
+                    <NextImage
+                      alt={'Spider'}
+                      src={'/static/images/spider3.jpg/'}
+                      width={100}
+                      height={100}
+                    />
                   </dl>
                   <div className="space-y-3 xl:col-span-3">
                     <div>
