@@ -2,7 +2,7 @@ const siteMetadata = {
   title: 'mfshi03 Blog',
   author: 'Michael Shi',
   headerTitle: 'mfshi03 Blog',
-  description: 'A blog created with Next.js and Tailwind.css',
+  description: 'a blog site',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://mfshi03.github.io/',

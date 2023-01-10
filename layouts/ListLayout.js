@@ -60,13 +60,14 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                     <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                       <time dateTime={date}>{formatDate(date)}</time>
                     </dd>
-                    <NextImage
-                      className="centered"
-                      alt={'Header'}
-                      src={images != null ? images[0] : '/static/images/transparent.png'}
-                      width={100}
-                      height={100}
-                    />
+                    <dd className="iconimg">
+                      <NextImage
+                        alt={'Header'}
+                        src={images != null ? images[0] : '/static/images/transparent.png'}
+                        width={100}
+                        height={100}
+                      />
+                    </dd>
                   </dl>
                   <div className="space-y-3 xl:col-span-3">
                     <div>
