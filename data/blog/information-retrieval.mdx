@@ -9,22 +9,35 @@ images: ['/static/images/spider3.png/']
 ---
 
 <figure>
-  <img src="/static/images/spider3.png/" width="800px" height="200px" />
-  <figcaption
-    text-align="center"
-    display="inline-block"
-    margin="1px"
-    width="85%"
-    line-height={1.35}
-    font-style="italic"
-  ></figcaption>
+  <img src="/static/images/spider-crawl.png/" width="800px" height="200px" />
 </figure>
 
 ### Introduction
 
 Since December, I have been invested in learning and playing with ChatGPT, an OpenAI platform to generate text with a Large-Language model(LLM). Based on what I've seen so far,
 these LLMs have a lot of potential to disrupt and generate industries.With this in mind, my first thought was the similarity between this UI platform
-and gooogle in terms of its information retrieval ability from text. The major difference between the two is that ChatGPT only utilizes pre-trained data to generate answers.
+and google in terms of its information retrieval ability from text. The major difference between the two is that ChatGPT only utilizes pre-trained data to generate answers.
 As a result, it cannot access information on the internet. But what if it could?
 
 ### Web-Crawling
+
+In order to give GPT-3 the ability to browse the internet, the first problem I had resolve was transferring most information on the web into
+readable text. For this problem, I stumbled on [DiffBot](https://app.diffbot.com/extract/) an API to help parse text from different types of websites such as article, discussion board, and video sites.
+With this and the YouTube Transcripts API, I could now freely programmatically access most information on the web. The next problem I needed to solve was navigating the web and naturally I came across
+[Google Custom Search](https://programmablesearchengine.google.com/about/), a customizable search console and API for browsing the internet. With these two functionalities in hand, I could now query and
+retrieve text information.
+
+As a side note, I think developing this web crawling functionality was a good experience because with a few good google searches I was able to avoid
+difficult technical hurdles altogether. It's always a good thing to check for pre-existing solutions especially in software engineering where it is heavily
+emphasized to simplify problems. More on this [here](https://www.youtube.com/watch?v=BnIz7H5ruy0)
+
+### Semantic Queries
+
+I really do believe the intersection between search and Large-Language models will be an important breeding ground for revolutionary information technology.
+I'm not sure if this the greatest way to describe this technology, but I like to think of theses LLMs as a universal query language because they demonstrate the ability to extract contextual meaning from
+a huge set of information structures.
+
+With this in mind, I set out to use ChatGPT to find use cases for improved search. The first one I thought about was using ChatGPT to generate
+additional descriptors based on the keywords of the query to be appended to the search. This was a kind of simple first introduction to this. It turns out this
+idea relate a lot to "query language" and the use of advanced search techniques that everyone knows about such "site:website", but no one actually considers to use on a consistent
+basis.
