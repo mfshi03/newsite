@@ -5,7 +5,7 @@ const siteMetadata = {
   description: 'a blog site',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://mfshi03.github.io/',
+  siteUrl: 'https://www.mfshi03.com',
   siteRepo: 'https://github.com/mfshi03/newsite',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/godgate.png',
