@@ -9,7 +9,7 @@ images: ['/static/images/spi.png']
 ---
 
 <figure>
-  <img src="/static/images/spider-crawl.png/" width="800px" height="200px" />
+  <img src="/static/images/spider-crawl.png/" width="400px" height="400px" />
 </figure>
 
 ### Introduction
@@ -41,7 +41,7 @@ With this in mind, I set out to use ChatGPT to find use cases for improved searc
 additional descriptors based on the keywords of the query to be appended to the search. This was a simple first introduction to this. It turns out this
 idea relate a lot to "query language" and the use of search specifiers that everyone is aware of such as "site:website", but no one actually considers to use on a consistent
 basis. There is actually an [interesting paper](https://arxiv.org/pdf/2109.00527.pdf) that uses this idea of search specifiers by appplying
-a [MuZero](https://www.deepmind.com/blog/muzero-mastering-go-chess-shogi-and-atari-without-rules) methodology to train an LLM to choose specifiers for a search query.
+a [MuZero](https://www.deepmind.com/blog/muzero-mastering-go-chess-shogi-and-atari-without-rules) Monte-Carlo tree search methodology to train an LLM to choose specifiers for a search query.
 Additionally, this inspired [WebGPT](https://openai.com/blog/webgpt/), OpenAI's approach to finding reliable training data, as it is the first paper cited.
 
 ### Intelligent information retrieval
@@ -49,17 +49,23 @@ Additionally, this inspired [WebGPT](https://openai.com/blog/webgpt/), OpenAI's 
 Although I find this paper extremely promisng, I find solely using semantic queries to navigate the information space as incomplete. My reasoning is that it relies to much on the actual search engine to bridge the gap between the original query
 and the distinct exploration routes for the search via the generated results. What I propose is to allow the agent to read individual page results to contextualize the specific domain of the original query and use this
 extracted information to generate search queries or even individual links. The main downside of this approach is the sheer amount of compute and time require to perform these operations at scale. This might be possible for large companies
-such as Microsoft or Google that have tons and tons of structured web information that can be cached. As an individual, I have decided not to appproach this path for intelligent information retrieval.
+such as Microsoft or Google that have tons and tons of structured web information that can be cached. As an individual, I have decided not to pursue this path for intelligent information retrieval.
 
 ### A human-centered approach
 
 Because of the time constraints, I think the best way to improve search at scale is to support people's own search procedure.
-This can be done very easily with the available technology is to provide a summarization and search generation tool for web browsing.
-So, I just made a neat little chrome extension to automatically read the first 3 search results, summarize them, and generate additional search
-queries
+This can be done very easily with the available technology by providing a summarization and search generation tool for web browsing.
+So, I just made a neat little chrome extension to automatically read random blocks from the first 3 search results summarize them, and generate additional search
+queries.
 
 Here it is:
 
 <figure>
   <img src="/static/images/search-extension.png" />
 </figure>
+
+One downside to this approach is the fact I used randomness to index the passage. As a result, this leads to some unexpected or irrelevant information
+in the summary. However, I think using this idea of randomness is important for information retrieval. The whole point of this project was not to replace google
+as a search engine, but supplement the latent information gain from google to create a unique search path or rabbit hole for the user. This allows for the
+user to have fun and treat search as kind of a treasure hunt of interconnected links and queries. Personally, I feel I get the most out of search when I randomly
+stumble on some information that turns out to really shape my perspective on a topic.
