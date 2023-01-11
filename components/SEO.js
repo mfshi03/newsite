@@ -136,7 +136,7 @@ export const BlogSEO = ({
     description: summary,
   }
 
-  const twImageUrl = featuredImages[1].url
+  const twImageUrl = featuredImages.length >= 2 ? featuredImages[1].url : featuredImages[0].url
 
   return (
     <>
