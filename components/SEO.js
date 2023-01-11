@@ -136,7 +136,7 @@ export const BlogSEO = ({
     description: summary,
   }
 
-  const twImageUrl = featuredImages[0].url
+  const twImageUrl = featuredImages[1].url
 
   return (
     <>
