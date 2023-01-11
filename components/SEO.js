@@ -41,7 +41,7 @@ export const PageSEO = ({ title, description }) => {
       description={description}
       ogType="website"
       ogImage={ogImageUrl}
-      twImage={twImageUrl}
+      twImage={ogImageUrl}
     />
   )
 }
