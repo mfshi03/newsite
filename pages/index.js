@@ -1,6 +1,7 @@
 import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
+import NextImage from 'next/image'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
@@ -31,7 +32,7 @@ export default function Home({ posts }) {
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
-            const { slug, date, title, summary, tags } = frontMatter
+            const { slug, date, title, summary, images, tags } = frontMatter
             return (
               <li key={slug} className="py-12">
                 <article>
@@ -40,6 +41,14 @@ export default function Home({ posts }) {
                       <dt className="sr-only">Published on</dt>
                       <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                         <time dateTime={date}>{formatDate(date)}</time>
+                      </dd>
+                      <dd className="iconimg">
+                        <NextImage
+                          alt={'Header'}
+                          src={images != null ? images[0] : '/static/images/transparent.png'}
+                          width={100}
+                          height={100}
+                        />
                       </dd>
                     </dl>
                     <div className="space-y-5 xl:col-span-3">
