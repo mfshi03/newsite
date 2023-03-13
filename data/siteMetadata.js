@@ -12,7 +12,7 @@ const siteMetadata = {
   socialBanner: '/static/images/twitter-card.png',
   email: 'mfshi03@gmail.com',
   github: 'https://github.com/mfshi03',
-  twitter: 'https://twitter.com/Twitter',
+  twitter: 'https://twitter.com/mfshi03',
   facebook: 'https://facebook.com',
   youtube: 'https://youtube.com',
   linkedin: 'https://www.linkedin.com/in/michael-shi-33304020b/',
