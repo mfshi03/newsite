@@ -16,6 +16,7 @@ const siteMetadata = {
   facebook: 'https://facebook.com',
   youtube: 'https://youtube.com',
   linkedin: 'https://www.linkedin.com/in/michael-shi-33304020b/',
+  chesscom: 'https://www.chess.com/member/mfshi03',
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
