@@ -12,6 +12,12 @@ const projectsData = [
     href: 'https://chrome.google.com/webstore/detail/linkbunny/khdlilmahhmmcginjoligfnknggoemph/related?hl=en&authuser=0',
   },
   {
+    title: 'FeedForward',
+    description: `A content subscription service for blog posts and youtube videos built with a custom ranking engine`,
+    imgSrc: '/static/images/feedforward.png',
+    href: 'https://ai-feed-mfshi03.vercel.app/',
+  },
+  {
     title: 'Artscaper.net',
     description: `Year long startup idea project with the homies to help artists find reference images using Generative Search`,
     imgSrc: '/static/images/artscaper.png',
