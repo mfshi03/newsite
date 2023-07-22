@@ -13,7 +13,7 @@ const projectsData = [
   },
   {
     title: 'Artscaper.net',
-    description: `Year long startup idea project to help artists find reference images using Generative Search`,
+    description: `Year long startup idea project with the homies to help artists find reference images using Generative Search`,
     imgSrc: '/static/images/artscaper.png',
     href: 'https://artscaper.net',
   },
