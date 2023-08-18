@@ -15,7 +15,7 @@ const projectsData = [
     title: 'FeedForward',
     description: `A content subscription service for blog posts and youtube videos built with a custom recommendation system`,
     imgSrc: '/static/images/feedforward.png',
-    href: 'https://ai-feed-mfshi03.vercel.app/',
+    href: 'https://feedforward-mfshi03.vercel.app/',
   },
   {
     title: 'Artscaper.net',
