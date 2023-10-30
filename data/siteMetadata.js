@@ -9,7 +9,7 @@ const siteMetadata = {
   siteRepo: 'https://github.com/mfshi03/newsite',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/godgate.png',
-  socialBanner: '/static/images/twitter-card.png',
+  socialBanner: '/static/images/new-twitter-card.png',
   email: 'mfshi03@gmail.com',
   github: 'https://github.com/mfshi03',
   twitter: 'https://twitter.com/mfshi03',
