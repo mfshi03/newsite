@@ -4,7 +4,7 @@ avatar: /static/images/profile.png
 occupation: Undergraduate Student
 company: Virginia Tech
 email: mfshi03@gmail.com
-twitter: https://twitter.com/Twitter
+twitter: https://twitter.com/mfshi03
 linkedin: https://www.linkedin.com/in/michael-shi-33304020b/
 github: https://github.com/mfshi03
 ---
