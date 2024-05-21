@@ -13,7 +13,7 @@ const projectsData = [
   },
   {
     title: 'Artscaper.net',
-    description: `Startup Incubator Project to help artists create. Built-in support for Art Vector Search and real-time collaborative image editing, and search term suggestions. Built with Svelte, TailwindCSS, and AWS`,
+    description: `Startup Incubator Project to help artists create. Built-in support for Art Vector Search, real-time collaborative image editing, and search term suggestions. Built with Svelte, TailwindCSS, and AWS`,
     imgSrc: '/static/images/artscaper.png',
     href: 'https://artscaper.net',
   },
