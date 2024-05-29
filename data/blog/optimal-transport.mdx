@@ -78,10 +78,13 @@ the two distribution or non-overlapping. WGAN addresses this by using Earth move
 **Transport Plan**
 
 $$EMD(P_r, P_{\theta}) = \inf || x - y || \gamma(x,y) = \inf \mathbb{E}_{x, y \in \gamma} || x - y||$$
+
 We can derive the dual formulation of EMD, by making this a maximization instead of a minimization
 
-$$EMD(P_r, P_\theta) \approxeq sup \mathbb{E}_{p_r}$$
-1-Lipschitz condition ensures there is smoothness between two distributions on the discriminator corresponding to $\mathbb{E}_{p_r}[f(x)]$
+$$EMD(P_r, P_\theta)  \approx \sup_{\|f\|_L \leq 1} \left( \mathbb{E}_{x \sim P_r}[f(x)] - \mathbb{E}_{y \sim P_\theta}[f(y)] \right)$$
+
+which satisfies $|f(x_1) - f(x_2)| \leq |x_1 - x_2|$ for all $(x_1, x_2)$.
+This 1-Lipschitz condition ensures there is smoothness between two distributions on the discriminator corresponding to $\mathbb{E}_{p_r}[f(x)]$
 
 To ensure Lipschitz condition on a neural net we bound the weights
 by clipping them then the slope can't be bigger the magnitude of the
@@ -91,4 +94,4 @@ clipping.
 
 $$min_G max_D [\mathbb{E}_{x \sim p_{data}}D(x) - \mathbb{E}_{z \sim p}D(G(z))]$$
 
-The **main difference** between Wasserstein GAN and regular GAN is that it uses linear activation instead of sigmoid in discriminator and reduces the logs in
+The **main difference** between Wasserstein GAN and regular GAN objectives is that it uses linear activation instead of sigmoid in the discriminator and removes the logs
