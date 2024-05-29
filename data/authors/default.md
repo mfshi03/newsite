@@ -9,6 +9,10 @@ linkedin: https://www.linkedin.com/in/michael-shi-33304020b/
 github: https://github.com/mfshi03
 ---
 
-Hello! My name is Michael Shi and I am an undergraduate computer science student at Virginia Tech. I am passionate about learning and have broad interests in software development, machine learning, mathematics, business and psychology.
+I have broad interests in software engineering, machine learning, math, and entrepreneurship.
 
-In my free time, I like to hoop, code, play online chess, watch documentaries, listen to podcasts, and just go on random rabbit holes on the internet.
+I value learning from first principles and applying them to challenging problems. It's especially exciting for me to discover innovative solutions.
+
+I graduated with my degree in CS from Virginia Tech in 2024.
+
+My favorite past times are building software, training models, playing basketball, and online chess.
