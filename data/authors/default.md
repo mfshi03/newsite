@@ -13,6 +13,6 @@ I have broad interests in software engineering, machine learning, math, and entr
 
 I value learning from first principles and applying them to challenging problems. It's especially exciting for me to discover innovative solutions.
 
-I graduated with my degree in CS from Virginia Tech in 2024.
+I graduated with my degree in CS from Virginia Tech in Spring 2024.
 
 My favorite past times are building software, training models, playing basketball, and online chess.
