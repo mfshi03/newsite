@@ -2,14 +2,14 @@
 title: The magic behind AI Art Generation
 date: '2022-09-25'
 tags: ['Math', 'Machine Learning', 'Art']
-draft: false
+draft: true
 summary: 'An interesting rabbit hole I go into regarding AI Art Generation'
 authors: ['default']
 ---
 
-Recently, there has been news of an AI-Art generation tool called Midjourney that has already won an art competition. 
+Recently, there has been news of an AI-Art generation tool called Midjourney that has already won an art competition.
 
-This incited me to find out more about this tool and see for myself what it could do. 
+This incited me to find out more about this tool and see for myself what it could do.
 
 Here's what I Learned:
 
@@ -25,16 +25,23 @@ But besides all this, the images that Midjourney creates are absolutely stunning
 
 ![Insidious bloom](/static/images/insflower.png)
 
-
 ### How it works?
 
 What are diffusion models?
-	Diffusion models are a form of generative models.  In the special case of generative models, we have two neural networks called the discriminator and generator networks. The generator network essentially learns to generates new data samples from the input data and the discriminator network learns to classify generated vs input data. Over iterations, the generator network is able learns how to generate more similar data to the input.
+Diffusion models are a form of generative models. In the special case of generative models, we have two neural networks called the discriminator and generator networks. The generator network essentially learns to generates new data samples from the input data and the discriminator network learns to classify generated vs input data. Over iterations, the generator network is able learns how to generate more similar data to the input.
 
-
-In stable diffusion, autoencoders are used to derive latent variables from the images. This autoencoder architecture is uniquely suited for this task because of it's ability to minimize the loss of information from the input data. 
+In stable diffusion, autoencoders are used to derive latent variables from the images. This autoencoder architecture is uniquely suited for this task because of it's ability to minimize the loss of information from the input data.
 
 <figure>
-        <img src="/static/images/autoencoder.png"/>
-        <figcaption text-align="center" display="inline-block" margin="1px" width="85%" line-height={1.35} font-style="italic" >Figure 1. How the autoencoder converts input data into latent variables</figcaption>
+  <img src="/static/images/autoencoder.png" />
+  <figcaption
+    text-align="center"
+    display="inline-block"
+    margin="1px"
+    width="85%"
+    line-height={1.35}
+    font-style="italic"
+  >
+    Figure 1. How the autoencoder converts input data into latent variables
+  </figcaption>
 </figure>
