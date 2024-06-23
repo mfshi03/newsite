@@ -1,3 +1,4 @@
 node_modules
 plotly-latest.min.js
 *.md
+*.mdx
