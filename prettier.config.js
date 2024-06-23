@@ -10,4 +10,13 @@ module.exports = {
   proseWrap: 'preserve',
   htmlWhitespaceSensitivity: 'strict',
   endOfLine: 'lf',
+  overrides: [
+    {
+      files: '*.mdx',
+      options: {
+        parser: 'mdx',
+        proseWrap: 'preserve',
+      },
+    },
+  ],
 }
