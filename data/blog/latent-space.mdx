@@ -1,25 +1,102 @@
 ---
-title: Latent embeddings  
+title: Latent embeddings
 date: '2024-06-08'
-tags: ['Math', 'Machine Learning']
+tags: ['math', 'machine learning']
 draft: false
-summary: 'An overview of commonly used techniques associated with latent embeddings
+summary: 'An overview of commonly used techniques associated with latent embeddings'
 authors: ['default']
-images: ['/static/images/moco.png']
+images: ['/static/images/moco.png', '/static/images/transformer-latent.png']
 ---
 
-### Contrastive Learning
+### **Contrastive Learning**
 
-Contrastive Learning is by far the most commonly used technique to train large embedding models with transformers.
+Contrastive Learning is the most commonly used technique to train large embedding models with transformers.
 
-One of the first paper to explore this idea of contrastive learning for image embeddings was Momentum Encodor or MoCo([He et al. 2019](https://arxiv.org/pdf/1911.05722))
+The goal of contrastive learning is to learn dense vector representations of the input modality (e.g. images, text, video) where distances between similar items are close and dissimilar items are far apart.
+
+**Contrastive Loss**
+
+We can formulate a loss objective where we define the similarity as the dot product of the L2-normalized feature representations.
+
+<div class="centered text-xl">
+$$ sim(x, y) = \frac{f(x)}{|| f(x)||_2} \cdot \frac{f(y)}{||f(y)||_2} $$
+</div>
+
+Given that x is our query or $x^+$ and $x^-$ is our in-batch positives and negatives.
+
+Our loss is defined as:
+
+<div class="text-xl">
+$l(x, x^+) = - \log \frac{\exp (sim(x, x^+ ) / \tau)}{ \exp(sim(x, x^+)/\tau) + \sum^N_{j=1} \exp(sim(x, x_j^-)/ \tau)} $
+</div>
+
+One of the first paper to explore this idea of contrastive learning for image embeddings was Momentum Encoder or MoCo ([He et al. 2019](https://arxiv.org/pdf/1911.05722))
+
+The key takeaway from MoCo was that it makes use of a dummy encoder which resolves the computational cost of training a unique encoder without losing quality of negative encodings over time.
+
+$$w_k \leftarrow m w_k + (1 - m) w_q$$
 
 <figure>
   <img src="/static/images/moco.png" />
 </figure>
 
+### **Relationship with Language Modeling**
+
+Computing a vector similarity between latent vectors is reminiscent to the core principle behind self-attention in language models such as GPT (Generative Pre-Trained Transformer)
+
+As you can see from the diagram below, the model learns through self-attention the similarity level between different words or tokens in your dictionary.
+
+<figure>
+  <img src="/static/images/transformer-latent.png" />
+</figure>
+
+When we generate new words, the model selects the word with the highest probability in relation to the query and keys computed by a similarity.
+
+More specifically, this computation is represented by a lookup table defined by learnable parameters from our word embedding $x_i$ and our encoders $Q$, $K$, and $V$.
+
+$$ q_i = Qx_i \text{ (queries) } \quad k_i = Kx_i \text{ (keys) } \quad v_i = Vx_i \text{ (values)}$$
+
+<figure style={{ textAlign: 'center' }}>
+  <img src="/static/images/lookup_table.png" style={{ width: '50%', height: '50%' }} />
+</figure>
+
+**High-level overview**
+
+At a high level, a transformer is learning an implicit probability transition matrix based off of predicting the next
+term from the context. This can be formalized in multi-headed attention like so:
+
+$$p(x_t | x_{t-1} ... x_{1}) = softmax(FFN_n(max(0, (Norm(Concat(h_1, h_2, ... , h_k) W^0 )))))$$
+
+where an attention head $h_i$ is computing the function
+
+$$h_i = softmax(\frac{QK^T}{\sqrt{d_k}})V$$
+
+with a multi-layer feed forward network defined as:
+
+$$FFN_i(x) = max(0, W_{i-1}(FFN_{i-1}(x) + b))W_i + b$$
+
+{/\*
+
+### Latent spaces in Diffusion models
+
+Diffusion models originated from variational auto-encoders. They they are trained on an objective based off of sampling a latent $z \sim \mathcal{N}(0,1)$ from gaussian noise.
+
+A VAE defines an intractable density function where $x$ is our prior distribution:
+
+<div class="text-xl">
+    $$p_{\theta}(x) = \int p_{\theta}(z) p_{\theta}(x | z) dz$$
+</div>
+**Conditional Variational Autoencoder** uses Encoder $q_\phi (z | x)$ and Decoder $p_\theta(x|z)$ networks to learn 
+a latent representation of the input data with respect to the output data.
+
+This seems intuitive because people reconstruct images in their minds all the time even if they don't have perfect memory of the
+exact details.
+\*/}
+
 ### Resources
 
-[CLIP Paper](https://proceedings.mlr.press/v139/radford21a/radford21a.pdf)
-[GTE Embedding model](https://arxiv.org/pdf/2308.03281)
-[NV-Embed paper](https://arxiv.org/pdf/2405.17428)
+- [Momentum Encoder](https://arxiv.org/pdf/1911.05722)
+- [CLIP Paper](https://proceedings.mlr.press/v139/radford21a/radford21a.pdf)
+- [CS480/680 Lecture 19: Attention and Transformer Networks](https://www.youtube.com/watch?v=OyFJWRnt_AY)
+- [Stanford CS224N NLP with Deep Learning | 2023 | Lecture 8 - Self-Attention and Transformers](https://www.youtube.com/watch?v=LWMzyfvuehA)
+- [What exactly are the Keys, Values, and Queries in a Transformer?](https://stats.stackexchange.com/questions/421935/what-exactly-are-keys-queries-and-values-in-attention-mechanisms/531971#531971)
