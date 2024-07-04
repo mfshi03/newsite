@@ -1,11 +1,11 @@
 ---
-title: Latent embeddings  
-date: '2024-06-08'
+title: Learning Latent Embeddings 
+date: '2024-07-03'
 tags: ['math', 'machine learning']
 draft: false
 summary: 'An overview of commonly used techniques associated with latent embeddings'
 authors: ['default']
-images: ['/static/images/moco.png', '/static/images/transformer-latent.png']
+images: ['/static/images/latent-images.jpg', '/static/images/latent-images.jpg', '/static/images/moco.png', '/static/images/transformer-latent.png']
 ---
 
 ### **Contrastive Learning** 
@@ -14,6 +14,18 @@ Contrastive Learning is the most commonly used technique to train large embeddin
 
 The goal of contrastive learning is to learn dense vector representations of the input modality (e.g. images, text, video) where distances between similar items are close and dissimilar items are far apart. 
 
+
+**Siamese Networks**
+
+First introduced in [Bromsky et al.](https://papers.neurips.cc/paper_files/paper/1993/file/288cc0ff022877bd3df94bc9360b9c5d-Paper.pdf) as a way to perform signature verification,
+the Siamese Network is a neural network architecture that makes use of two towers or encoders to learn representations between similar and dissimilar items. 
+
+<figure>
+  <img src="/static/images/siamese.png" />
+</figure>
+
+It does this by minimizing the objective $||f(x^i) - f(x^j)||^2$ when the input images $x$ are the same and maximizing the objective when they 
+are different. 
 
 **Contrastive Loss**
 
@@ -32,9 +44,9 @@ $l(x, x^+) = - \log \frac{\exp (sim(x, x^+ ) / \tau)}{ \exp(sim(x, x^+)/\tau) + 
 </div>
 
 
-One of the first paper to explore this idea of contrastive learning for image embeddings was Momentum Encoder or MoCo ([He et al. 2019](https://arxiv.org/pdf/1911.05722))
+One of the first papers to explore this idea of contrastive learning for image embeddings was Momentum Encoder or MoCo ([He et al. 2019](https://arxiv.org/pdf/1911.05722))
 
-The key takeaway from MoCo was that it makes use of a dummy encoder which resolves the computational cost of training a unique encoder without losing quality of negative encodings over time. 
+The key takeaway from MoCo was that it makes use of a dummy encoder from which resolves the computational cost of training a unique encoder without losing quality of negative encodings over time. 
 
 $$w_k \leftarrow m w_k + (1 - m) w_q$$
 
@@ -45,17 +57,17 @@ $$w_k \leftarrow m w_k + (1 - m) w_q$$
 
 ### **Relationship with Language Modeling**
 
-Computing a vector similarity between latent vectors is reminiscent to the core principle behind self-attention in language models such as GPT (Generative Pre-Trained Transformer)
+Computing a vector similarity between latent vectors to extract meaning behind the data is reminiscent to the core principle behind self-attention in language models such as GPT (Generative Pre-Trained Transformer)
 
-As you can see from the diagram below, the model learns through self-attention the similarity level between different words or tokens in your dictionary. 
+From the diagram below, a transformer learns through self-attention the similarity level between different words or tokens in the input dictionary. 
 
 <figure>
   <img src="/static/images/transformer-latent.png" />
 </figure>
 
-When we generate new words, the model selects the word with the highest probability in relation to the query and keys computed by a similarity. 
+When we generate new words, the model selects the word with the highest probability in relation to the query and keys computed by a weighted similarity or attention function $softmax(\frac{QK^T}{\sqrt{d_k}})V$. 
 
-More specifically, this computation is represented by a lookup table defined by learnable parameters from our word embedding $x_i$ and our encoders $Q$, $K$, and $V$.
+More specifically, this computation is represented by a lookup table defined by learnable parameters from our word embedding $x_i$ and our encoder networks $Q$, $K$, and $V$.
 
 $$ q_i = Qx_i \text{ (queries) }  \quad   k_i = Kx_i \text{ (keys)     }  \quad v_i = Vx_i \text{ (values)}$$
 
@@ -81,8 +93,7 @@ $$FFN_i(x) = max(0, W_{i-1}(FFN_{i-1}(x) + b))W_i + b$$
 
 
 {/*
-
-### Latent spaces in Diffusion models
+### **Variational Autoencoders**
 
 Diffusion models originated from variational auto-encoders. They they are trained on an objective based off of sampling a latent $z \sim \mathcal{N}(0,1)$ from gaussian noise.
 
@@ -98,9 +109,9 @@ This seems intuitive because people reconstruct images in their minds all the ti
 exact details. 
 
 */}
-
 ### Resources 
 
+ - [DeepLearning.AI Siamese Networks](https://www.youtube.com/watch?v=6jfw8MuKwpI)
  - [Momentum Encoder](https://arxiv.org/pdf/1911.05722)
  - [CLIP Paper](https://proceedings.mlr.press/v139/radford21a/radford21a.pdf)
  - [CS480/680 Lecture 19: Attention and Transformer Networks](https://www.youtube.com/watch?v=OyFJWRnt_AY)
