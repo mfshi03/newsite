@@ -1,17 +1,16 @@
 ---
 name: Michael Shi
 avatar: /static/images/profile.png
-occupation: Undergraduate Student
-company: Virginia Tech
+occupation: Building software systems
 email: mfshi03@gmail.com
 twitter: https://twitter.com/mfshi03
 linkedin: https://www.linkedin.com/in/michael-shi-33304020b/
 github: https://github.com/mfshi03
 ---
 
-I have broad interests in software engineering, machine learning, math, and entrepreneurship.
+Broad interests in software engineering, machine learning, math, and entrepreneurship.
 
-I value learning from first principles and applying them to challenging problems. It's especially exciting for me to discover innovative solutions.
+I value learning from first principles and applying them to challenging problems. Grateful for the creative outlet programming gives me.
 
 Graduated with my degree in CS from Virginia Tech in Spring 2024.
 

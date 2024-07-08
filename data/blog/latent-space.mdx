@@ -54,7 +54,22 @@ $$w_k \leftarrow m w_k + (1 - m) w_q$$
   <img src="/static/images/moco.png" />
 </figure>
 
-### **Triplet loss** 
+**Triplet loss** 
+
+<figure>
+  <img src="/static/images/triplet.png" />
+</figure>
+
+Triplet loss can be viewed as a better contrastive loss. 
+Given an anchor $A$, a positive sample $P$, and a negative sample $N$, Triplet seeks to minimize the objective 
+
+$$l(A,P,N) = \max((|f(A)-f(P)|)^2 - (|f(N)-f(A)|)^2 + \alpha, 0)$$
+
+where each absolute value term represents the distance between the encodings learned of anchor A and the negative and positive samples.
+
+We want to make sure $(|f(A)-f(P)|)^2 - (|f(N)-f(A)|)^2$ or the distance between the anchor and positive term is less than the distance between 
+the anchor and the negative term. Additionally, sometimes we want the distance between our embedding distance to be greater hence why we have a slack $\alpha$.
+
 
 ### **Relationship with Language Modeling**
 
@@ -95,7 +110,7 @@ $$FFN_i(x) = max(0, W_{i-1}(FFN_{i-1}(x) + b))W_i + b$$
 
 
 <figure>
-  <iframe src="https://www.mfshi03.com/visual.html" width="100%" height="400"></iframe>
+  <iframe src="/visual.html" width="100%" height="400"></iframe>
   <figcaption>Caption for your embedded diagram</figcaption>
 </figure>
 
@@ -115,12 +130,13 @@ a latent representation of the input data with respect to the output data.
 This seems intuitive because people reconstruct images in their minds all the time even if they don't have perfect memory of the 
 exact details. 
 
+ - [CLIP Paper](https://proceedings.mlr.press/v139/radford21a/radford21a.pdf)
 */}
 ### Resources 
 
- - [DeepLearning.AI Siamese Networks](https://www.youtube.com/watch?v=6jfw8MuKwpI)
+ - [C4W4L03 Siamese Network](https://www.youtube.com/watch?v=6jfw8MuKwpI)
  - [Momentum Encoder](https://arxiv.org/pdf/1911.05722)
- - [CLIP Paper](https://proceedings.mlr.press/v139/radford21a/radford21a.pdf)
+ - [C4W4L04 Triplet loss](https://www.youtube.com/watch?v=d2XB5-tuCWU)
  - [CS480/680 Lecture 19: Attention and Transformer Networks](https://www.youtube.com/watch?v=OyFJWRnt_AY)
  - [Stanford CS224N NLP with Deep Learning | 2023 | Lecture 8 - Self-Attention and Transformers](https://www.youtube.com/watch?v=LWMzyfvuehA)
  - [What exactly are the Keys, Values, and Queries in a Transformer?](https://stats.stackexchange.com/questions/421935/what-exactly-are-keys-queries-and-values-in-attention-mechanisms/531971#531971)
