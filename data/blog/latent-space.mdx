@@ -93,7 +93,7 @@ $$l(A,P,N) = \max((|f(A)-f(P)|)^2 - (|f(N)-f(A)|)^2 + \alpha, 0)$$
 where each absolute value term represents the distance between the encodings learned of anchor A and the negative and positive samples.
 
 We want to make sure $(|f(A)-f(P)|)^2 - (|f(N)-f(A)|)^2$ or the distance between the anchor and positive term is less than the distance between 
-the anchor and the negative term. Additionally, sometimes we want the distance between our embedding distance to be greater hence why we have a slack $\alpha$.
+the anchor and the negative term. Additionally, sometimes we want the distance between our two embedding distances to be greater hence why we have a slack $\alpha$.
 
 
 ### **Relationship with Language Modeling**
@@ -108,7 +108,7 @@ From the diagram below, a transformer learns through self-attention the similari
   alignItems: 'center',
   width: '100%'
 }}>
-  <img src="/static/images/transformer-latent.png" style={{width: '75%', height: '75%'}}/>
+  <img src="/static/images/transformer-latent.png" style={{width: '80%', height: '80%'}}/>
   <figcaption>Transformer as an Inquiry System</figcaption>
 
 </figure>
