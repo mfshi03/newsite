@@ -20,8 +20,14 @@ The goal of contrastive learning is to learn dense vector representations of the
 First introduced in [Bromsky et al.](https://papers.neurips.cc/paper_files/paper/1993/file/288cc0ff022877bd3df94bc9360b9c5d-Paper.pdf) as a way to perform signature verification,
 the Siamese Network is a neural network architecture that makes use of two towers or encoders to learn representations between similar and dissimilar items. 
 
-<figure>
-  <img src="/static/images/siamese.png" />
+<figure style={{
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  width: '100%'
+}}>
+  <img src="/static/images/siamese.png" style={{width: '80%'}}/>
+  <figcaption>Momentum Encoder</figcaption> 
 </figure>
 
 It does this by minimizing the objective $||f(x^i) - f(x^j)||^2$ when the input images $x$ are the same and maximizing the objective when they 
@@ -48,16 +54,35 @@ One of the first papers to explore this idea of contrastive learning for image e
 
 The key takeaway from MoCo was that it makes use of a dummy encoder from which resolves the computational cost of training a unique encoder without losing quality of negative encodings over time. 
 
+<div style={{
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  width: '100%'
+}}>
 $$w_k \leftarrow m w_k + (1 - m) w_q$$
+</div>
 
-<figure>
+<figure style={{
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  width: '100%'
+}}>
   <img src="/static/images/moco.png" />
+  <figcaption>Momentum Encoder</figcaption>
 </figure>
 
 **Triplet loss** 
 
-<figure>
+<figure style={{
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  width: '100%'
+}}>
   <img src="/static/images/triplet.png" />
+  <figcaption>Learning triplets</figcaption>
 </figure>
 
 Triplet loss can be viewed as a better contrastive loss. 
@@ -77,8 +102,15 @@ Computing a vector similarity between latent vectors to extract meaning behind t
 
 From the diagram below, a transformer learns through self-attention the similarity level between different words or tokens in the input dictionary. 
 
-<figure>
-  <img src="/static/images/transformer-latent.png" />
+<figure style={{
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  width: '100%'
+}}>
+  <img src="/static/images/transformer-latent.png" style={{width: '75%', height: '75%'}}/>
+  <figcaption>Transformer as an Inquiry System</figcaption>
+
 </figure>
 
 When we generate new words, the model selects the word with the highest probability in relation to the query and keys computed by a weighted similarity or attention function $softmax(\frac{QK^T}{\sqrt{d_k}})V$. 
@@ -87,8 +119,14 @@ More specifically, this computation is represented by a lookup table defined by 
 
 $$ q_i = Qx_i \text{ (queries) }  \quad   k_i = Kx_i \text{ (keys)     }  \quad v_i = Vx_i \text{ (values)}$$
 
-<figure style={{textAlign: 'center'}}>
+<figure style={{
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  width: '100%'
+}}>
   <img src="/static/images/lookup_table.png" style={{width: '50%', height: '50%'}} />
+  <figcaption>Lookup Table for Queries</figcaption>
 </figure>
 
 
@@ -108,12 +146,26 @@ with a multi-layer feed forward network defined as:
 $$FFN_i(x) = max(0, W_{i-1}(FFN_{i-1}(x) + b))W_i + b$$
 
 
+### Dimensionality Reduction 
 
-<figure>
-  <iframe src="/visual.html" width="100%" height="400"></iframe>
-  <figcaption>Caption for your embedded diagram</figcaption>
+For those who want more interpretability of the model, there are dimensionality reduction 
+techniques to visualize and understand these embeddings such as t-SNE and UMAP.
+
+<figure style={{
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  width: '100%'
+}}>
+  <iframe 
+    src="/visual.html" 
+    style={{
+      width: '80%',
+      height: '500px'
+    }}
+  />
+  <figcaption>Visualization of YouTube video embeddings with t-SNE (Use arrow keys to explore)</figcaption>
 </figure>
-
 {/*
 ### **Variational Autoencoders**
 
