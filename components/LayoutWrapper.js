@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
 import LogoBlack from '@/data/resized_black_piece.svg'
@@ -12,6 +13,8 @@ import { useTheme } from 'next-themes'
 const LayoutWrapper = ({ children }) => {
   const { theme, resolvedTheme } = useTheme()
   const currentTheme = theme || resolvedTheme
+  const router = useRouter()
+
   return (
     <SectionContainer>
       <div className="flex h-screen flex-col justify-between">
@@ -38,7 +41,11 @@ const LayoutWrapper = ({ children }) => {
                 <Link
                   key={link.title}
                   href={link.href}
-                  className="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4"
+                  className={`p-1 text-lg font-medium transition duration-300 ease-in-out sm:p-4 ${
+                    router.pathname === link.href
+                      ? 'text-primary-500 dark:text-primary-500'
+                      : 'text-gray-900 hover:text-primary-600 dark:text-gray-100 dark:hover:text-primary-400'
+                  }`}
                 >
                   {link.title}
                 </Link>

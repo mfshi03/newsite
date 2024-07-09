@@ -1,5 +1,5 @@
 const siteMetadata = {
-  title: 'm.shi archive',
+  title: 'mfshi03 archive',
   author: 'Michael Shi',
   headerTitle: '',
   description: 'a burning curiosity',
