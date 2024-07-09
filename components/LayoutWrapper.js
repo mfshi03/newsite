@@ -25,12 +25,12 @@ const LayoutWrapper = ({ children }) => {
                 <div className="mr-3">
                   {currentTheme === 'dark' ? <LogoWhite /> : <LogoBlack />}
                 </div>
-                {typeof siteMetadata.headerTitle === 'string' ? (
-                  <div className="hidden h-6 text-2xl font-semibold sm:block">
-                    {siteMetadata.headerTitle}
+                {typeof siteMetadata.title === 'string' ? (
+                  <div className="hidden h-6 text-lg font-semibold sm:block">
+                    {siteMetadata.title}
                   </div>
                 ) : (
-                  siteMetadata.headerTitle
+                  siteMetadata.title
                 )}
               </div>
             </Link>
@@ -43,7 +43,7 @@ const LayoutWrapper = ({ children }) => {
                   href={link.href}
                   className={`p-1 text-lg font-medium transition duration-300 ease-in-out sm:p-4 ${
                     router.pathname === link.href
-                      ? 'text-primary-500 dark:text-primary-500'
+                      ? 'text-primary-500 dark:text-primary-400'
                       : 'text-gray-900 hover:text-primary-600 dark:text-gray-100 dark:hover:text-primary-400'
                   }`}
                 >
