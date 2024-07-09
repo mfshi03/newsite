@@ -3,8 +3,7 @@ name: Michael Shi
 avatar: /static/images/profile.png
 occupation: Building software systems
 email: mfshi03@gmail.com
-twitter: https://twitter.com/mfshi03
-linkedin: https://www.linkedin.com/in/michael-shi-33304020b/
+twitter: https://x.com/mfshi03
 github: https://github.com/mfshi03
 ---
 

@@ -1,8 +1,8 @@
 const siteMetadata = {
-  title: 'mfshi03 Blog',
+  title: 'm.shi archive',
   author: 'Michael Shi',
-  headerTitle: 'mfshi03 Blog',
-  description: 'a blog site',
+  headerTitle: '',
+  description: 'a burning curiosity',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://www.mfshi03.com',
