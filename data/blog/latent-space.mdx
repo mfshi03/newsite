@@ -1,6 +1,6 @@
 ---
 title: Learning Latent Embeddings 
-date: '2024-07-03'
+date: '2024-07-14'
 tags: ['math', 'machine learning']
 draft: false
 summary: 'An overview of commonly used techniques associated with latent embeddings'
@@ -148,8 +148,16 @@ $$FFN_i(x) = max(0, W_{i-1}(FFN_{i-1}(x) + b))W_i + b$$
 
 ### Dimensionality Reduction 
 
-For those who want more interpretability of the model, there are dimensionality reduction 
-techniques to visualize and understand these embeddings such as t-SNE and UMAP.
+Understanding the nature of the high-dimensional representations your model is learning can seem overly abstract especially when working with vectors
+of size 1000 and greater. 
+
+Fortunately, there exist dimensionality reduction techniques to visualize and understand these embeddings.
+One commonly used technique for dimensionality reduction of embeddings is UMAP (Uniform Manifold Approximation and Projection).
+
+The core idea of UMAP is to find a global topological structure of the data. More on this [here](https://www.youtube.com/watch?v=nq6iPZVUxZU).
+
+Below is an example of how UMAP can represent text embeddings of different internet content you might see on your "For You Page" in 3D.
+
 
 <figure style={{
   display: 'flex',
@@ -160,12 +168,13 @@ techniques to visualize and understand these embeddings such as t-SNE and UMAP.
   <iframe 
     src="/visual.html" 
     style={{
-      width: '80%',
+      width: '90%',
       height: '500px'
     }}
   />
-  <figcaption>Visualization of YouTube video embeddings with t-SNE (Use arrow keys to explore)</figcaption>
+  <figcaption>Interactive graph of content embeddings with UMAP (Use arrow keys to explore)</figcaption>
 </figure>
+
 {/*
 ### **Variational Autoencoders**
 
