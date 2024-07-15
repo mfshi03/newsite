@@ -1,7 +1,7 @@
 ---
 title: Learning Latent Embeddings 
 date: '2024-07-14'
-tags: ['math', 'machine learning']
+tags: ['math', 'machine learning', 'representation learning']
 draft: false
 summary: 'An overview of commonly used techniques associated with latent embeddings'
 authors: ['default']
@@ -73,7 +73,7 @@ $$w_k \leftarrow m w_k + (1 - m) w_q$$
   <figcaption>Momentum Encoder</figcaption>
 </figure>
 
-**Triplet loss** 
+**Triplet Loss** 
 
 <figure style={{
   display: 'flex',
@@ -93,7 +93,8 @@ $$l(A,P,N) = \max((|f(A)-f(P)|)^2 - (|f(N)-f(A)|)^2 + \alpha, 0)$$
 where each absolute value term represents the distance between the encodings learned of anchor A and the negative and positive samples.
 
 We want to make sure $(|f(A)-f(P)|)^2 - (|f(N)-f(A)|)^2$ or the distance between the anchor and positive term is less than the distance between 
-the anchor and the negative term. Additionally, sometimes we want the distance between our two embedding distances to be greater hence why we have a slack $\alpha$.
+the anchor and the negative term. Additionally, sometimes we have threshhold $\alpha$ to ensure that the model learns that positives and anchors are much more similar 
+than negatives and anchors.
 
 
 ### **Relationship with Language Modeling**
@@ -156,7 +157,7 @@ One commonly used technique for dimensionality reduction of embeddings is UMAP (
 
 The core idea of UMAP is to find a global topological structure of the data. More on this [here](https://www.youtube.com/watch?v=nq6iPZVUxZU).
 
-Below is an example of how UMAP can represent text embeddings of different internet content you might see on your "For You Page" in 3D.
+Below is an example of how UMAP can represent text embeddings of different internet content you might see in your "For You Page" in 3D.
 
 
 <figure style={{
@@ -174,6 +175,17 @@ Below is an example of how UMAP can represent text embeddings of different inter
   />
   <figcaption>Interactive graph of content embeddings with UMAP (Use arrow keys to explore)</figcaption>
 </figure>
+
+
+### Conclusion 
+
+Thanks for reading up to this point!
+
+Hopefully, you learned a little about representation learning and gained some intuition on how 
+DL models learn semantic relationships through encoding latents. 
+
+### Acknowledgements
+Thank you to [Andrew Zhang](https://x.com/Andrew_Zhang0) for feedback on earlier drafts!
 
 {/*
 ### **Variational Autoencoders**
